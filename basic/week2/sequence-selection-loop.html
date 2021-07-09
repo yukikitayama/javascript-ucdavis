@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sequence, Selection and Loop</title>
+</head>
+<body>
+  <h1>Working with Sequence, Selection and Loop</h1>
+  
+  <script>
+    var myString = "I am really hungry for some";
+    console.log(myString);
+    var myUpperString = myString.toUpperCase();
+    console.log(myUpperString);
+
+    var reallyLocation = myString.search("really");
+    console.log(reallyLocation);
+    var specialWord = myString.substr(reallyLocation, 6);
+    console.log(specialWord);
+    specialWord = specialWord.toUpperCase();
+    var newString = myString.replace('really', specialWord);
+    console.log(newString);
+
+    var foods = ["cheese", "pie", "breakfast", "lunch"];
+    console.log(`${myString} ${foods[0]}`);
+
+    for (var i = 0; i < foods.length; i++) {
+
+      // Checking to see if the incrementor is even!
+      if (i % 2 === 0) {
+        console.log(`${myString} ${foods[i].toUpperCase()}`);
+      }
+      else {
+        console.log(`${myString} ${foods[i]}`);
+      }
+
+    }
+
+    /* for (var eachFood of foods) {
+      console.log(`${myString} ${eachFood}`);
+    } */
+  </script>
+</body>
+</html>

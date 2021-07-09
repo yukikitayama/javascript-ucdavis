@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing Selections and Booleans</title>
+</head>
+<body>
+  <h1>Testing Selections!</h1>
+
+  <script>
+    var red = true;
+    var blue = false;
+    // green is undefined, which JavaScript treats it as false
+    var green;
+    // var green = null;
+    // var green = 0;
+    // var green = 1;
+    // var green = "cheese";
+    var myNum = 5;
+    var otherNum = 6;
+    var notNum = "chicken";
+    var myValue = notNum - myNum;
+    // console.log(myValue);  // NaN
+
+/*     if (myValue) {
+      console.log("The statement is true");
+    }
+    else {
+      console.log("the statetments is false!");
+    } */
+
+    var colors = ['red', 'green', 'blue', 'yellow'];
+    var selectedColor = colors[3];
+
+    /* if (selectedColor == 'red') {
+      console.log('the color is red');
+    }
+    else if (selectedColor == 'green') {
+      console.log('the color is green');
+    }
+    else if (selectedColor == 'blue') {
+      console.log('the color is blue');
+    }
+    else {
+      console.log('the color is yellow');
+    } */
+
+    /* switch(selectedColor) {
+      case "red": 
+        console.log("the color is red");
+        break;
+      case "green":
+        console.log('the color is green');
+        break;
+      case "blue":
+        console.log('the color is blue');
+        break;
+      case "yellow":
+        console.log('the color is yellow');
+        break;
+      default:
+        console.log('There was an error!');
+      } */
+
+    var goodMood = true;
+    var gotSleep = true;
+
+    if (goodMood && gotSleep) {
+      console.log("Today is a good day");
+    }
+    else {
+      console.log("I am grumpy!");
+    }
+
+  </script>
+</body>
+</html>
