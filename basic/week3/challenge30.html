@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Event Challenge: Challenge 30</title>
+  <style>
+    body { height: 3000px; }
+    .one { background-color: beige; transition: all 3s; }
+    .two { background-color: blueviolet; transition: all 3s; }
+    .three { background-color: coral; transition: all 3s; }
+    .four { background-color: cornflowerblue; transition: all 3s; }
+    .five { background-color: darkgoldenrod; transition: all 3s; }
+  </style>
+</head>
+<body class="one">
+
+  <h1>JavaScript Event Chellenge: Challenge 30</h1>
+  <p>Press the B key to turn the page beigh</p>
+  <p>Press the V key to turn the page blueviolet</p>
+  <p>Press the C key to turn the page coral</p>
+  <p>Press the F key to turn the page cornflowerblue</p>
+  <p>Press the G key to turn the page darkgoldenrod</p>
+
+  <script>
+    var bodyTag = document.querySelector('body');
+
+    document.addEventListener('keydown', function(event){
+      var keyPressed = event.which;
+
+      switch(keyPressed) {
+        case 66: bodyTag.className = "one"; break;
+        case 86: bodyTag.className = "two"; break;
+        case 67: bodyTag.className = "three"; break;
+        case 70: bodyTag.className = "four"; break;
+        case 71: bodyTag.className = "five"; break;
+        default: alert("You didn't press one of the specified keys!");
+      }
+    });
+  </script>
+  
+</body>
+</html>

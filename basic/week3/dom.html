@@ -8,13 +8,19 @@
 </head>
 <body>
   <h1>DOM Examples</h1>
-  <form>
-    <label><input type="checkbox"> YES!</label>
-  </form>
+  <div>
+    <p>This is the first paragraph on the page.</p>
+    <p>Remove this paragraph</p>
+  </div>
 
   <script>
-    var myCheckbox = document.querySelector('input');
-    myCheckbox.setAttribute('checked', 'checked');
+    // var myTag = document.createElement('p');
+    // var myText = document.createTextNode('Here is a new paragraph');
+    // myTag.appendChild(myText);
+    // var myDiv = document.querySelector('div');
+    // myDiv.appendChild(myTag);
+    var myDiv = document.querySelector('div');
+    myDiv.removeChild(myDiv.children[1]);
   </script>
 </body>
 </html>
