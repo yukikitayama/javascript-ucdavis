@@ -47,5 +47,20 @@
         </section>
         
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('#main').css('border', '2px solid red');
+        $('.special').css('border', '2px solid blue');
+        $('#main h2').css('border', '2px solid green');
+        // Chaining
+        $('li').even().css('border', '2px solid orange');
+        $('li').first().css('background-color', 'gray');
+
+        // Anonymous function 
+        $('a').click(function(){
+            console.log($(this).html());
+            console.log(this.innerHTML);
+        });
+    </script>
 </body>
 </html>
