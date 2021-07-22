@@ -17,14 +17,23 @@ $(window).on('load', function(){
     counter++;
 
     if (counter === imageCount) {
+
+      $('#slider ul').clone().appendTo('#slider');
+      $('#slider ul').last().css('left', imageWidth + 'px');
+
+      leftPosition = `-${totalWidth}`;
+
+      $('#slider ul').last().animate({left: 0}, 700, 'easeInQuad');
+      $('#slider ul').first().animate({left: leftPosition}, 700, 'easeInQuad', function(){
+        $('#slider ul').first().remove();
+      });
+
       counter = 0;
+    } else {
+      leftPosition = `-${counter * imageWidth}px`;
+      // 700 milliseconds
+      $('#slider ul').animate({left: leftPosition}, 700, 'easeInQuad');
     }
-
-    leftPosition = `-${counter * imageWidth}px`;
-    // console.log(leftPosition);
-
-    // 700 milliseconds
-    $('#slider ul').animate({left: leftPosition}, 700, "easeInQuad");
   });
 
   $('#previous').click(function(){
@@ -33,11 +42,22 @@ $(window).on('load', function(){
 
     if (counter < 0) {
       counter = imageCount - 1;
+      
+      $('#slider ul').clone().appendTo('#slider');
+      $('#slider ul').last().css('left', `-${totalWidth}`);
+      
+      leftPosition = `-${counter * imageWidth}px`;
+      
+      $('#slider ul').last().animate({left: leftPosition}, 700, 'easeInQuad');
+      $('#slider ul').first().animate({left: imageWidth + 'px'}, 700, 'easeInQuad', function(){
+        $('#slider ul').first().remove();
+      });
     }
-
-    leftPosition = `-${counter * imageWidth}px`;
-    $('#slider ul').animate({left: leftPosition}, 700, "easeInQuad");
-
+    else {
+      leftPosition = `-${counter * imageWidth}px`;
+      $('#slider ul').animate({left: leftPosition}, 700, "easeInQuad");
+    }
+    
   });
 });
 
