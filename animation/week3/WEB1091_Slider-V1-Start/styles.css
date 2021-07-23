@@ -23,29 +23,3 @@ body { padding: 100px; background:#717171; }
 #slider ul li img {
 	display: block;
 }
-
-/********** Link Styles ***********/
-
-#links {
-	width:420px;
-	display: flex;
-	margin: 0 auto;
-}
-
-#links a {
-	display:block;
-	width:210px;
-	background:#6C0204;
-	height:50px;
-	line-height:50px;
-	color:#D5D5D5;
-	text-decoration:none;
-	font-family:Arial;
-	text-transform:uppercase;
-	text-align:center;
-}
-
-#links a:hover {
-	background:#A51D1F;
-	color:#fff;
-}
