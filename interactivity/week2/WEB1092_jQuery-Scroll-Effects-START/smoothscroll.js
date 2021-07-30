@@ -1,13 +1,12 @@
 $('nav ul li a').click(function(){
   const thisSection = $(this).attr('href');
-  const thisLink = $(this);
 
   $('html, body').stop().animate({
     scrollTop: $(thisSection).offset().top - 200
-  }, 800, 'easeOutCirc', function(){
-    $('nav ul li a').removeAttr('class');
-    thisLink.addClass('selected');
-  });
+  }, 800, 'easeOutCirc');
+
+  // Keep # in url
+  return false;
 });
 
 
@@ -18,11 +17,12 @@ $(window).on('load', function(){
   var postPos;
   var counter = 0;
   var prevCounter = 0;
+  var doneResizing;
 
   var postTops = [];
-  posts.each(function(){
-    postTops.push(Math.floor($(this).offset().top));
-  });
+  
+  resetPagePosition();
+  
   // console.log(postTops);
   
   $(window).scroll(function(){
@@ -42,4 +42,32 @@ $(window).on('load', function(){
       prevCounter = counter;
     }
   });
+
+  $(window).on('resize', function(){
+    clearTimeout(doneResizing);
+    doneResizing = setTimeout(function(){
+      resetPagePosition();
+    }, 500);
+  });
+
+  function resetPagePosition() {
+    postTops = [];
+    posts.each(function(){
+      postTops.push(Math.floor($(this).offset().top));
+    });
+    // console.log(postTops);
+
+    var pagePosition = $(window).scrollTop() + 210;
+    counter = 0;
+
+    for (var i = 0; i < postTops.length; i++) {
+      if (pagePosition > postTops[i]) {
+        counter++;
+      }
+    }
+    counter--;
+
+    $(allLinks).removeAttr('class');
+    $('nav ul li a').eq(counter).addClass('selected');
+  }
 });
