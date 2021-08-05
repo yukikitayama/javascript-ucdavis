@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Basics</title>
+</head>
+<body>
+  <h1>Form Basics</h1>
+
+  <form method="post" aciont="processor.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname" placeholder="Yuki">
+    
+    <label for="favcolor">Favorite Color</label>
+    <input type="color" name="favcolor" id="favcolor">
+
+    <fieldset>
+      <legend>Do You Want Spam?</legend>
+      <input type="radio" name="spam" id="spam-yes" value="yes">
+      <label for="spam-yes">Yes, Send me spam!</label>
+
+      <input type="radio" name="spam" id="spam-no" value="no" checked>
+      <label for="spam-no">No, don't send spam</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Favorite Animal</legend>
+      <input type="checkbox" name="cat" id="cat" value="Cat">
+      <label for="cat">Cat</label>
+
+      <input type="checkbox" name="dog" id="dog" value="Dog">
+      <label for="dog">Dog</label>
+    </fieldset>
+
+
+    
+  </form>
+</body>
+</html>
