@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Demonstrating Prototypes &amp; Inheritance</h1>
+
+  <script>
+
+    function iPhone() {}
+
+    iPhone.prototype.faceId = function() {
+      console.log('unlock my phone with my face!');
+    }
+
+    iPhone.prototype.video = function() {
+      console.log('take 4k video with my iPhone');
+    }
+
+    iPhone.prototype.stocksApp = function() {
+      console.log('find out what the stock market is doing');
+    }
+
+    // Create object
+    let myPhone = new iPhone();
+    myPhone.faceId();
+    myPhone.video();
+    myPhone.stocksApp();
+
+    myPhone.app = 'instagram';
+    // console.log(myPhone);
+
+    // myPhone.stocksApp = function() {
+    //   console.log('upgrade to Pro version');
+    // }
+
+    // myPhone.stocksApp();
+    myPhone.stocksApp = undefined;
+
+    console.log(myPhone);
+
+    const myArray = ['banana', 'apple', 'orange'];
+    console.log(myArray);
+  </script>
+  
+</body>
+</html>
