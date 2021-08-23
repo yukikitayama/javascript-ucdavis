@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Arrow Functions</h1>
+
+  <script>
+    function makeUpperCase(aString) {
+      return aString.toUpperCase();
+    }
+
+    console.log(makeUpperCase('here is a string'));
+
+    const makeUpperCase2 = function(aString) {
+      return aString.toUpperCase();
+    }
+
+    console.log(makeUpperCase2('here is a string2'));
+  
+    const makeUpperCase3 = (aString) => {
+      return aString.toUpperCase();
+    }
+
+    console.log(makeUpperCase3('here is a string3'));
+
+    const makeUpperCase4 = aString => aString.toUpperCase();
+
+    console.log(makeUpperCase4('here is a string4'));
+
+    const fullname = (fname, lname) => `${lname}, ${fname}`;
+
+    console.log(fullname('Yuki', 'Kitayama'));
+
+    const fruit = ["banana", "apple", "lemon", "kiwi"];
+    const upperFruit = [];
+
+    fruit.forEach(function(thisFruit){
+      upperFruit.push(thisFruit.toUpperCase());
+    });
+
+    console.log(fruit);
+    console.log(upperFruit);
+
+    const upperFruit2 = [];
+
+    fruit.forEach((eachFruit) => {
+      upperFruit2.push(eachFruit.toUpperCase());
+    });
+
+    console.log(upperFruit2);
+
+    const Employee = function(fname, lname, jobTitle){
+      this.fname = fname;
+      this.lname = lname;
+      this.position = jobTitle;
+      this.fullName = () => `${fname} ${lname}`;
+    }
+    // const Employee = (fname, lname, jobTitle) => {
+    //   this.fname = fname;
+    //   this.lname = lname;
+    //   this.position = jobTitle;
+    //   this.fullName = () => `${fname} ${lname}`;
+    // }
+    const id1234 = new Employee('Bob', 'Smith', 'Mechanic');
+
+    console.log(id1234.fname);
+    console.log(id1234.fullName());
+
+  </script>
+</body>
+</html>
